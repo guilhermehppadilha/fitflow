@@ -359,7 +359,7 @@ const Loader = () => (
 export default function App() {
   // BYPASS: Inicializamos o usuário já com dados fictícios
   const [user, setUser] = useState({ uid: 'dev-user', email: 'developer@fitflow.local' });
-  const [authLoading, setAuthLoading] = useState(false); // Já carregado
+  const [authLoading, setAuthLoading] = useState(false);
   
   // UI States
   const [activeTab, setActiveTab] = useState('library'); 
