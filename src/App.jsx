@@ -34,11 +34,299 @@ const EXERCISE_CATEGORIES = [
 ];
 
 const EXERCISE_LIBRARY = [
-  { id: 'ex1', name: 'Supino Reto com Barra', category: 'Musculação', target: 'Peito', instructions: 'Deite no banco, pés firmes e desça a barra até o peito.', video: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop ' },
-  { id: 'ex2', name: 'Agachamento Livre com Barra', category: 'Musculação', target: 'Pernas', instructions: 'Costas eretas, desça o quadril abaixo do joelho.', video: 'https://images.unsplash.com/photo-1566241477600-ac026ad43874?w=400&h=300&fit=crop ' },
-  { id: 'ex3', name: 'Corrida na Esteira', category: 'Cardio', target: 'Cardio', instructions: 'Alterne entre 1 min de sprint e 1 min de caminhada.', video: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&h=300&fit=crop ' },
-  { id: 'ex4', name: 'Remada Curvada', category: 'Musculação', target: 'Costas', instructions: 'Incline o tronco e puxe o peso em direção ao abdômen.', video: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=400&h=300&fit=crop ' },
-  { id: 'ex5', name: 'Burpees Completos', category: 'Cardio', target: 'Full Body', instructions: 'Combine agachamento, flexão e salto.', video: 'https://images.unsplash.com/photo-1543975177-8004945e8211?w=400&h=300&fit=crop ' },
+  // --- PEITO ---
+  { 
+    id: 'chest_1', 
+    name: 'Supino Reto com Barra', 
+    category: 'Musculação',
+    target: 'Peito', 
+    instructions: 'Deite no banco, pés firmes no chão. Desça a barra controlada até tocar o peito e empurre.', 
+    video: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'chest_2', 
+    name: 'Supino Inclinado com Halteres', 
+    category: 'Musculação', 
+    target: 'Peito', 
+    instructions: 'Banco a 45º. Suba os halteres alinhados com o peito superior e desça controlando.', 
+    video: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'chest_3', 
+    name: 'Crucifixo na Máquina (Peck Deck)', 
+    category: 'Musculação', 
+    target: 'Peito', 
+    instructions: 'Mantenha os cotovelos na altura dos ombros e feche os braços até as mãos se tocarem.', 
+    video: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'chest_4', 
+    name: 'Flexão de Braço', 
+    category: 'Calistenia', 
+    target: 'Peito', 
+    instructions: 'Mãos na largura dos ombros, corpo pranchado. Desça até o peito quase tocar o chão.', 
+    video: 'https://images.unsplash.com/photo-1598971639058-211a73287750?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'chest_5', 
+    name: 'Crossover Polia Alta', 
+    category: 'Musculação', 
+    target: 'Peito', 
+    instructions: 'Incline o tronco levemente. Puxe os cabos em direção ao centro do abdômen inferior.', 
+    video: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=300&fit=crop' 
+  },
+
+  // --- PERNAS ---
+  { 
+    id: 'legs_1', 
+    name: 'Agachamento Livre', 
+    category: 'Musculação', 
+    target: 'Pernas', 
+    instructions: 'Pés na largura dos ombros. Desça o quadril para trás e para baixo, mantendo a coluna reta.', 
+    video: 'https://images.unsplash.com/photo-1566241477600-ac026ad43874?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'legs_2', 
+    name: 'Leg Press 45º', 
+    category: 'Musculação', 
+    target: 'Pernas', 
+    instructions: 'Empurre a plataforma com os calcanhares. Não estenda totalmente os joelhos no topo.', 
+    video: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'legs_3', 
+    name: 'Cadeira Extensora', 
+    category: 'Musculação', 
+    target: 'Pernas', 
+    instructions: 'Estenda as pernas contraindo o quadríceps no topo. Segure 1s antes de descer.', 
+    video: 'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'legs_4', 
+    name: 'Stiff com Barra', 
+    category: 'Musculação', 
+    target: 'Pernas', 
+    instructions: 'Joelhos semi-flexionados. Desça a barra rente à perna, jogando o quadril para trás.', 
+    video: 'https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'legs_5', 
+    name: 'Elevação de Panturrilha em Pé', 
+    category: 'Musculação', 
+    target: 'Pernas', 
+    instructions: 'Na ponta dos pés, suba o máximo que conseguir e desça alongando bem o calcanhar.', 
+    video: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop' 
+  },
+
+  // --- COSTAS ---
+  { 
+    id: 'back_1', 
+    name: 'Puxada Alta Frontal', 
+    category: 'Musculação', 
+    target: 'Costas', 
+    instructions: 'Puxe a barra em direção ao peito superior, jogando os cotovelos para baixo.', 
+    video: 'https://images.unsplash.com/photo-1603287681836-e5452e4d6f6e?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'back_2', 
+    name: 'Remada Curvada com Barra', 
+    category: 'Musculação', 
+    target: 'Costas', 
+    instructions: 'Tronco inclinado, coluna reta. Puxe a barra em direção ao umbigo.', 
+    video: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'back_3', 
+    name: 'Remada Baixa (Triângulo)', 
+    category: 'Musculação', 
+    target: 'Costas', 
+    instructions: 'Sentado, puxe o triângulo até o abdômen mantendo o peito estufado.', 
+    video: 'https://images.unsplash.com/photo-1598532163257-5264875b223a?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'back_4', 
+    name: 'Serrote Unilateral', 
+    category: 'Musculação', 
+    target: 'Costas', 
+    instructions: 'Apoie joelho e mão no banco. Puxe o halter rente ao corpo focando na dorsal.', 
+    video: 'https://images.unsplash.com/photo-1550345332-09e3ac987658?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'back_5', 
+    name: 'Barra Fixa (Pull-up)', 
+    category: 'Calistenia', 
+    target: 'Costas', 
+    instructions: 'Pendure-se na barra e suba até o queixo ultrapassar a linha das mãos.', 
+    video: 'https://images.unsplash.com/photo-1598971639058-211a73287750?w=400&h=300&fit=crop' 
+  },
+
+  // --- BRAÇOS (Bíceps/Tríceps) ---
+  { 
+    id: 'arms_1', 
+    name: 'Rosca Direta com Barra', 
+    category: 'Musculação', 
+    target: 'Braços', 
+    instructions: 'Cotovelos fixos ao lado do corpo. Suba a barra até o peito e desça devagar.', 
+    video: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'arms_2', 
+    name: 'Tríceps Pulley (Corda)', 
+    category: 'Musculação', 
+    target: 'Braços', 
+    instructions: 'Puxe a corda para baixo, abrindo as mãos no final do movimento para contrair o tríceps.', 
+    video: 'https://images.unsplash.com/photo-1530822847156-5df684ec5ee1?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'arms_3', 
+    name: 'Rosca Martelo', 
+    category: 'Musculação', 
+    target: 'Braços', 
+    instructions: 'Halteres na posição neutra (em pé). Suba alternadamente ou simultâneo.', 
+    video: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'arms_4', 
+    name: 'Tríceps Testa', 
+    category: 'Musculação', 
+    target: 'Braços', 
+    instructions: 'Deitado, desça a barra W em direção à testa dobrando apenas os cotovelos.', 
+    video: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'arms_5', 
+    name: 'Rosca Scott', 
+    category: 'Musculação', 
+    target: 'Braços', 
+    instructions: 'Apoie os braços no banco Scott. Suba a barra sem tirar o tríceps do apoio.', 
+    video: 'https://images.unsplash.com/photo-1598532163257-5264875b223a?w=400&h=300&fit=crop' 
+  },
+
+  // --- OMBROS ---
+  { 
+    id: 'shoulders_1', 
+    name: 'Desenvolvimento com Halteres', 
+    category: 'Musculação', 
+    target: 'Ombros', 
+    instructions: 'Sentado, empurre os halteres acima da cabeça até estender os braços.', 
+    video: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'shoulders_2', 
+    name: 'Elevação Lateral', 
+    category: 'Musculação', 
+    target: 'Ombros', 
+    instructions: 'Em pé, suba os braços lateralmente até a altura dos ombros. Cotovelos levemente flexionados.', 
+    video: 'https://images.unsplash.com/photo-1550345332-09e3ac987658?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'shoulders_3', 
+    name: 'Elevação Frontal', 
+    category: 'Musculação', 
+    target: 'Ombros', 
+    instructions: 'Levante o peso à frente do corpo até a linha dos olhos, sem balançar o tronco.', 
+    video: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'shoulders_4', 
+    name: 'Crucifixo Inverso', 
+    category: 'Musculação', 
+    target: 'Ombros', 
+    instructions: 'Incline o tronco para frente. Abra os braços focando na parte de trás do ombro.', 
+    video: 'https://images.unsplash.com/photo-1598532163257-5264875b223a?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'shoulders_5', 
+    name: 'Encolhimento de Ombros', 
+    category: 'Musculação', 
+    target: 'Ombros', 
+    instructions: 'Segure pesos pesados ao lado do corpo. Suba os ombros em direção às orelhas.', 
+    video: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop' 
+  },
+
+  // --- CARDIO ---
+  { 
+    id: 'cardio_1', 
+    name: 'Corrida na Esteira', 
+    category: 'Cardio', 
+    target: 'Cardio', 
+    instructions: 'Mantenha um ritmo constante ou intercale tiros de velocidade com caminhada.', 
+    video: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'cardio_2', 
+    name: 'Bicicleta Ergométrica', 
+    category: 'Cardio', 
+    target: 'Cardio', 
+    instructions: 'Ajuste o banco na altura do quadril. Pedale mantendo a coluna estável.', 
+    video: 'https://images.unsplash.com/photo-1543975177-8004945e8211?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'cardio_3', 
+    name: 'Elíptico', 
+    category: 'Cardio', 
+    target: 'Cardio', 
+    instructions: 'Use os braços e pernas em sincronia. Ótimo para baixo impacto nas articulações.', 
+    video: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'cardio_4', 
+    name: 'Pular Corda', 
+    category: 'Cardio', 
+    target: 'Cardio', 
+    instructions: 'Saltos curtos e rápidos na ponta dos pés. Gire a corda usando os punhos.', 
+    video: 'https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'cardio_5', 
+    name: 'Polichinelos', 
+    category: 'Cardio', 
+    target: 'Cardio', 
+    instructions: 'Salte abrindo pernas e braços simultaneamente. Mantenha o ritmo acelerado.', 
+    video: 'https://images.unsplash.com/photo-1603287681836-e5452e4d6f6e?w=400&h=300&fit=crop' 
+  },
+
+  // --- FULL BODY ---
+  { 
+    id: 'full_1', 
+    name: 'Burpees Completos', 
+    category: 'Cross Training', 
+    target: 'Full Body', 
+    instructions: 'Agache, faça uma flexão, suba e termine com um salto vertical.', 
+    video: 'https://images.unsplash.com/photo-1543975177-8004945e8211?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'full_2', 
+    name: 'Kettlebell Swing', 
+    category: 'Cross Training', 
+    target: 'Full Body', 
+    instructions: 'Segure o peso, flexione o quadril e exploda para frente elevando o peso.', 
+    video: 'https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'full_3', 
+    name: 'Mountain Climbers', 
+    category: 'Cardio', 
+    target: 'Full Body', 
+    instructions: 'Em posição de prancha, traga os joelhos alternadamente em direção ao peito rapidamente.', 
+    video: 'https://images.unsplash.com/photo-1434608519344-49d77a699ded?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'full_4', 
+    name: 'Thruster (Agachamento + Ombro)', 
+    category: 'Cross Training', 
+    target: 'Full Body', 
+    instructions: 'Agache segurando a barra/halter e, ao subir, empurre o peso acima da cabeça.', 
+    video: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=400&h=300&fit=crop' 
+  },
+  { 
+    id: 'full_5', 
+    name: 'Corda Naval (Battle Rope)', 
+    category: 'Cross Training', 
+    target: 'Full Body', 
+    instructions: 'Base agachada, coluna reta. Faça movimentos de onda alternados com os braços.', 
+    video: 'https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=400&h=300&fit=crop' 
+  }
 ];
 
 const PRESET_WORKOUTS = [
@@ -223,6 +511,7 @@ export default function App() {
       setShowImportModal(false);
       setToast("Treino importado!");
       setLibrarySubTab('plans');
+    // eslint-disable-next-line no-unused-vars
     } catch (e) {
       alert("Código inválido.");
     }
